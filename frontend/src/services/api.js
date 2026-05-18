@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-    baseURL: "https://candidate-shortlisting-system-k2xb.onrender.com/"
+    baseURL: "https://candidate-shortlisting-system-k2xb.onrender.com/api"
 });
 
 export default API;
