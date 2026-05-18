@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+
 require("dotenv").config();
 
 const candidateRoutes = require("./routes/candidateRoutes");
@@ -8,7 +9,20 @@ const matchRoutes = require("./routes/matchRoutes");
 
 const app = express();
 
-app.use(cors());
+//app.use(cors());
+const cors = require("cors");
+
+app.use(cors({
+
+    origin: [
+
+        "http://localhost:5173",
+
+        "https://your-frontend-name.onrender.com"
+
+    ]
+
+}));
 app.use(express.json());
 
 app.use("/api/candidates", candidateRoutes);
